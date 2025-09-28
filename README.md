@@ -1,17 +1,53 @@
 # SecDev Course Template
 
-Стартовый шаблон для студенческого репозитория (HSE SecDev 2025).
-
 ## Быстрый старт
+
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\Activate.ps1
+source .venv/Scripts/activate
 pip install -r requirements.txt -r requirements-dev.txt
 pre-commit install
 uvicorn app.main:app --reload
 ```
 
-## Ритуал перед PR
+## Запуск приложения
+### Локальная разработка
+```bash
+source .venv/Scripts/activate
+uvicorn app.main:app --reload --port 8000
+```
+
+### Документация API
+
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+### Проверка работоспособности
+```bash
+curl http://localhost:8000/health
+curl -X POST "http://localhost:8000/items?name=test-item"
+curl http://localhost:8000/items/1
+```
+
+## Тестирование
+### Базовые тесты
+
+```bash
+pytest -q
+pytest -v
+pytest --cov=app
+pytest tests/test_main.py -v
+```
+
+### Структура тестов
+
+- test_main.py - тесты основных эндпойнтов
+- test_health.py - тесты health-check
+- conftest.py - фикстуры для тестирования
+
+## Development
+### Ритуал перед PR
+
 ```bash
 ruff check --fix .
 black .
@@ -20,34 +56,27 @@ pytest -q
 pre-commit run --all-files
 ```
 
-## Тесты
-```bash
-pytest -q
-```
+### CI
+В репозитории настроен workflow CI (GitHub Actions)
 
-## CI
-В репозитории настроен workflow **CI** (GitHub Actions) — required check для `main`.
-Badge добавится автоматически после загрузки шаблона в GitHub.
-
-## Контейнеры
+### Контейнеры
 ```bash
 docker build -t secdev-app .
 docker run --rm -p 8000:8000 secdev-app
-# или
 docker compose up --build
 ```
 
 ## Эндпойнты
-- `GET /health` → `{"status": "ok"}`
-- `POST /items?name=...` — демо-сущность
-- `GET /items/{id}`
+
+- GET /health → {"status": "ok"}
+- POST /items?name=... — демо-сущность
+- GET /items/{id}
 
 ## Формат ошибок
-Все ошибки — JSON-обёртка:
-```json
+```bash
 {
   "error": {"code": "not_found", "message": "item not found"}
 }
 ```
 
-См. также: `SECURITY.md`, `.pre-commit-config.yaml`, `.github/workflows/ci.yml`.
+См. также: SECURITY.md, .pre-commit-config.yaml, .github/workflows/ci.yml.
