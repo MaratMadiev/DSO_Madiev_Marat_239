@@ -1,0 +1,39 @@
+# .github/workflows/docker.yml
+name: Docker CI
+
+on:
+  push:
+    branches: [ main, p07-container-hardening ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: docker build -t suggestion-box .
+
+    - name: Run Hadolint
+      uses: hadolint/hadolint-action@v3.1.0
+      with:
+        dockerfile: Dockerfile
+        failure-threshold: warning
+
+    - name: Scan with Trivy
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: suggestion-box:latest
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+
+    - name: Upload Trivy results
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+    - name: Test non-root user
+      run: docker run --rm suggestion-box whoami
