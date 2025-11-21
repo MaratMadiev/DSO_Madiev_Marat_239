@@ -7,6 +7,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 
 # Загружаем переменные окружения
+
 load_dotenv()
 
 # SEC-NFR-002: Используем Argon2 для хэширования паролей
