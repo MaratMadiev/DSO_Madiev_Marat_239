@@ -1,0 +1,682 @@
+2025-11-21 19:40:55,596 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:40:56,708 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:41:04,648 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:41:32,543 - suggestion_box - INFO - API - GET /logs/health - anonymous - status=200
+2025-11-21 19:41:33,322 - suggestion_box - INFO - API - GET /logs/health - anonymous - status=200
+2025-11-21 19:49:47,210 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:50:03,495 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=newuser@example.com
+2025-11-21 19:50:03,495 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:03,540 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:04,596 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=loginuser@example.com
+2025-11-21 19:50:04,596 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:04,599 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:04,890 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:04,890 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:04,892 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:06,012 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:06,012 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:06,014 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:06,086 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:06,086 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:06,088 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:06,094 - suggestion_box - INFO - API - GET /debug/my-info - user_id=1 - status=200
+2025-11-21 19:50:06,096 - httpx - INFO - HTTP Request: GET http://testserver/debug/my-info "HTTP/1.1 200 OK"
+2025-11-21 19:50:07,229 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=duplicate@example.com
+2025-11-21 19:50:07,229 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:07,231 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:07,235 - suggestion_box - WARNING - SECURITY - REGISTER_DUPLICATE_EMAIL - anonymous - email=duplicate@example.com
+2025-11-21 19:50:07,237 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:50:08,347 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:50:08,347 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:08,349 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:08,414 - suggestion_box - WARNING - SECURITY - LOGIN_FAILED - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:50:08,415 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:50:09,704 - suggestion_box - WARNING - SECURITY - REGISTER_PASSWORD_TOO_SHORT - anonymous - email=shortpass@example.com
+2025-11-21 19:50:09,706 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:50:10,744 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:50:10,746 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2025-11-21 19:50:11,697 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=security@example.com
+2025-11-21 19:50:11,698 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:11,700 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:12,649 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:12,649 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:12,651 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:12,714 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:12,714 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:12,715 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:12,849 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:50:12,849 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:50:12,851 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:12,857 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:50:12,857 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:50:12,859 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:50:12,953 - suggestion_box - INFO - USER_ACTION - SUGGESTION_UPDATE - user_id=1 - suggestion_id=1
+2025-11-21 19:50:12,953 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:50:12,955 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:50:13,798 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:50:13,799 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:50:14,710 - suggestion_box - WARNING - SECURITY - INVALID_TOKEN - anonymous - token_verification_failed
+2025-11-21 19:50:14,712 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:50:16,113 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:50:16,114 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:50:17,239 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:17,239 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:17,241 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:17,312 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:17,313 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:17,314 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:17,614 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:50:17,614 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:50:17,616 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:18,953 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:18,954 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:18,955 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:19,021 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:19,021 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:19,023 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:19,141 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:50:19,142 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:50:19,144 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:20,293 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:20,293 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:20,295 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:20,356 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:20,356 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:20,358 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:20,469 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:50:20,469 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:50:20,471 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:20,476 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:50:20,477 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:50:20,478 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:50:21,885 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:21,885 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:21,887 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:21,955 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:21,956 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:21,958 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:22,095 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:50:22,095 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:50:22,097 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:22,101 - suggestion_box - INFO - API - GET /suggestions - anonymous - status=200
+2025-11-21 19:50:22,103 - httpx - INFO - HTTP Request: GET http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:24,022 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:50:24,024 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:50:25,113 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:25,114 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:25,116 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:25,186 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:25,186 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:25,188 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:25,369 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user2@example.com
+2025-11-21 19:50:25,369 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:50:25,371 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:25,437 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:50:25,438 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:50:25,440 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:25,556 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:50:25,556 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:50:25,558 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:25,562 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_ACCESS - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:50:25,562 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:50:25,564 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:50:26,608 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:50:26,608 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:50:26,611 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:26,682 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:50:26,682 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:50:26,684 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:26,873 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user3@example.com
+2025-11-21 19:50:26,874 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:50:26,876 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:50:26,936 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:50:26,936 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:50:26,938 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:50:27,040 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:50:27,040 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:50:27,042 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:50:27,047 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_UPDATE - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:50:27,047 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:50:27,048 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:54:47,388 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=newuser@example.com
+2025-11-21 19:54:47,388 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:47,391 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:48,637 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=loginuser@example.com
+2025-11-21 19:54:48,637 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:48,640 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:48,708 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:54:48,708 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:54:48,710 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:54:49,721 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:54:49,721 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:49,723 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:49,793 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:54:49,794 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:54:49,796 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:54:49,801 - suggestion_box - INFO - API - GET /debug/my-info - user_id=1 - status=200
+2025-11-21 19:54:49,803 - httpx - INFO - HTTP Request: GET http://testserver/debug/my-info "HTTP/1.1 200 OK"
+2025-11-21 19:54:50,926 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=duplicate@example.com
+2025-11-21 19:54:50,927 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:50,929 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:50,932 - suggestion_box - WARNING - SECURITY - REGISTER_DUPLICATE_EMAIL - anonymous - email=duplicate@example.com
+2025-11-21 19:54:50,933 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:54:52,043 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:54:52,043 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:52,045 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:52,115 - suggestion_box - WARNING - SECURITY - LOGIN_FAILED - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:54:52,116 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:54:53,409 - suggestion_box - WARNING - SECURITY - REGISTER_PASSWORD_TOO_SHORT - anonymous - email=shortpass@example.com
+2025-11-21 19:54:53,411 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:54:54,443 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:54:54,445 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2025-11-21 19:54:55,274 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=security@example.com
+2025-11-21 19:54:55,274 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:55,276 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:56,911 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:54:56,911 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:54:56,913 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:54:56,976 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:54:56,976 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:54:56,978 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:54:57,122 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:54:57,123 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:54:57,125 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:54:57,130 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:54:57,130 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:54:57,132 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:54:57,262 - suggestion_box - INFO - USER_ACTION - SUGGESTION_UPDATE - user_id=1 - suggestion_id=1
+2025-11-21 19:54:57,262 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:54:57,264 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:54:58,239 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:54:58,240 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:54:59,111 - suggestion_box - WARNING - SECURITY - INVALID_TOKEN - anonymous - token_verification_failed
+2025-11-21 19:54:59,113 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:55:00,051 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:55:00,052 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:55:01,280 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:55:01,280 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:55:01,282 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:01,354 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:55:01,355 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:55:01,356 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:01,814 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:55:01,814 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:55:01,816 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:01,818 - httpx - INFO - HTTP Request: GET http://testserver/debug/users "HTTP/1.1 404 Not Found"
+2025-11-21 19:55:03,061 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:55:03,061 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:55:03,064 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:03,153 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:55:03,153 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:55:03,155 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:03,275 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:55:03,275 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:55:03,278 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:04,478 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:55:04,478 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:55:04,481 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:04,612 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:55:04,613 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:55:04,616 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:04,852 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:55:04,852 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:55:04,854 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:04,861 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:55:04,861 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:55:04,863 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:55:05,925 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:55:05,925 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:55:05,927 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:06,019 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:55:06,019 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:55:06,021 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:06,122 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:55:06,123 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:55:06,125 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:06,129 - suggestion_box - INFO - API - GET /suggestions - anonymous - status=200
+2025-11-21 19:55:06,131 - httpx - INFO - HTTP Request: GET http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:07,273 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:55:07,275 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:55:08,524 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:55:08,525 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:55:08,528 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:08,620 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:55:08,620 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:55:08,622 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:08,823 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user2@example.com
+2025-11-21 19:55:08,823 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:55:08,825 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:08,895 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:55:08,895 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:55:08,897 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:09,002 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:55:09,002 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:55:09,004 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:09,009 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_ACCESS - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:55:09,009 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:55:09,011 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:55:11,079 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:55:11,079 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:55:11,082 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:11,158 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:55:11,158 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:55:11,160 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:11,344 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user3@example.com
+2025-11-21 19:55:11,345 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:55:11,347 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:55:11,426 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:55:11,426 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:55:11,428 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:55:11,543 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:55:11,543 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:55:11,545 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:55:11,549 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_UPDATE - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:55:11,549 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:55:11,551 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:57:37,759 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=newuser@example.com
+2025-11-21 19:57:37,759 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:37,762 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:38,864 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=loginuser@example.com
+2025-11-21 19:57:38,864 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:38,866 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:38,947 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:38,947 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:38,949 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:40,015 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:40,015 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:40,017 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:40,079 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:40,079 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:40,081 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:40,085 - suggestion_box - INFO - API - GET /debug/my-info - user_id=1 - status=200
+2025-11-21 19:57:40,087 - httpx - INFO - HTTP Request: GET http://testserver/debug/my-info "HTTP/1.1 200 OK"
+2025-11-21 19:57:41,187 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=duplicate@example.com
+2025-11-21 19:57:41,187 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:41,189 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:41,193 - suggestion_box - WARNING - SECURITY - REGISTER_DUPLICATE_EMAIL - anonymous - email=duplicate@example.com
+2025-11-21 19:57:41,194 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:57:42,304 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:57:42,305 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:42,307 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:42,377 - suggestion_box - WARNING - SECURITY - LOGIN_FAILED - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:57:42,379 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:57:43,637 - suggestion_box - WARNING - SECURITY - REGISTER_PASSWORD_TOO_SHORT - anonymous - email=shortpass@example.com
+2025-11-21 19:57:43,639 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:57:44,707 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:57:44,708 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2025-11-21 19:57:45,645 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=security@example.com
+2025-11-21 19:57:45,645 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:45,647 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:46,685 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:46,685 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:46,687 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:46,756 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:46,756 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:46,758 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:46,872 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:57:46,872 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:57:46,874 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:46,880 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:57:46,880 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:57:46,882 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:57:47,012 - suggestion_box - INFO - USER_ACTION - SUGGESTION_UPDATE - user_id=1 - suggestion_id=1
+2025-11-21 19:57:47,013 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:57:47,015 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:57:48,304 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:57:48,306 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:57:49,203 - suggestion_box - WARNING - SECURITY - INVALID_TOKEN - anonymous - token_verification_failed
+2025-11-21 19:57:49,204 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:57:50,010 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:57:50,011 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:57:51,153 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:51,153 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:51,155 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:51,224 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:51,224 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:51,226 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:51,334 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:57:51,334 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:57:51,336 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:51,339 - httpx - INFO - HTTP Request: GET http://testserver/debug/users "HTTP/1.1 404 Not Found"
+2025-11-21 19:57:53,775 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:53,775 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:53,777 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:53,847 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:53,847 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:53,848 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:53,961 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:57:53,962 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:57:53,963 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:55,091 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:55,091 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:55,093 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:55,157 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:55,157 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:55,159 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:55,285 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:57:55,285 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:57:55,287 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:55,291 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:57:55,292 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:57:55,293 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:57:56,296 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:56,297 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:56,299 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:56,368 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:56,368 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:56,370 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:56,477 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:57:56,477 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:57:56,479 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:56,483 - suggestion_box - INFO - API - GET /suggestions - anonymous - status=200
+2025-11-21 19:57:56,485 - httpx - INFO - HTTP Request: GET http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:57,410 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:57:57,411 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:57:58,542 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:57:58,542 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:57:58,545 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:58,612 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:57:58,612 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:57:58,615 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:58,796 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user2@example.com
+2025-11-21 19:57:58,796 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:57:58,798 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:57:58,872 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:57:58,872 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:57:58,873 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:57:59,442 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:57:59,443 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:57:59,445 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:57:59,449 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_ACCESS - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:57:59,449 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:57:59,450 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:58:00,622 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:00,622 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:00,624 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:00,698 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:00,698 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:00,700 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:00,886 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user3@example.com
+2025-11-21 19:58:00,886 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:58:00,888 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:00,950 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:58:00,950 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:58:00,952 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:01,059 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:58:01,060 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:58:01,061 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:01,066 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_UPDATE - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:58:01,066 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:58:01,067 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:58:07,568 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=newuser@example.com
+2025-11-21 19:58:07,568 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:07,570 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:08,673 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=loginuser@example.com
+2025-11-21 19:58:08,673 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:08,675 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:08,752 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:08,752 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:08,753 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:09,901 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:09,901 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:09,903 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:09,974 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:09,974 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:09,976 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:09,981 - suggestion_box - INFO - API - GET /debug/my-info - user_id=1 - status=200
+2025-11-21 19:58:09,983 - httpx - INFO - HTTP Request: GET http://testserver/debug/my-info "HTTP/1.1 200 OK"
+2025-11-21 19:58:11,460 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=duplicate@example.com
+2025-11-21 19:58:11,461 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:11,463 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:11,466 - suggestion_box - WARNING - SECURITY - REGISTER_DUPLICATE_EMAIL - anonymous - email=duplicate@example.com
+2025-11-21 19:58:11,467 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:58:12,544 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:58:12,544 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:12,546 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:12,619 - suggestion_box - WARNING - SECURITY - LOGIN_FAILED - user_id=1 - email=wrongpass@example.com
+2025-11-21 19:58:12,620 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:58:13,565 - suggestion_box - WARNING - SECURITY - REGISTER_PASSWORD_TOO_SHORT - anonymous - email=shortpass@example.com
+2025-11-21 19:58:13,567 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 19:58:13,792 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 19:58:13,793 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2025-11-21 19:58:14,846 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=security@example.com
+2025-11-21 19:58:14,846 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:14,849 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:16,339 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:16,339 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:16,343 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:16,443 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:16,444 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:16,446 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:16,586 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:58:16,587 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:58:16,589 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:16,597 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:58:16,597 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:58:16,599 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:58:16,736 - suggestion_box - INFO - USER_ACTION - SUGGESTION_UPDATE - user_id=1 - suggestion_id=1
+2025-11-21 19:58:16,736 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:58:16,738 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:58:17,625 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:58:17,626 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:58:18,740 - suggestion_box - WARNING - SECURITY - INVALID_TOKEN - anonymous - token_verification_failed
+2025-11-21 19:58:18,741 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:58:19,717 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:58:19,718 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:58:20,729 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:20,730 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:20,731 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:20,800 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:20,800 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:20,802 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:20,909 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:58:20,909 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:58:20,911 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:20,914 - httpx - INFO - HTTP Request: GET http://testserver/debug/users "HTTP/1.1 404 Not Found"
+2025-11-21 19:58:22,344 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:22,344 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:22,347 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:22,417 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:22,417 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:22,419 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:22,551 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:58:22,551 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:58:22,553 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:24,712 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:24,712 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:24,714 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:24,799 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:24,799 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:24,802 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:24,915 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:58:24,916 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:58:24,918 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:24,923 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 19:58:24,923 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 19:58:24,925 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 19:58:26,028 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:26,028 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:26,030 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:26,097 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:26,098 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:26,099 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:26,206 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 19:58:26,207 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 19:58:26,208 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:26,212 - suggestion_box - INFO - API - GET /suggestions - anonymous - status=200
+2025-11-21 19:58:26,214 - httpx - INFO - HTTP Request: GET http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:27,298 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 19:58:27,299 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 19:58:28,372 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:28,372 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:28,375 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:28,444 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:28,444 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:28,446 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:28,616 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user2@example.com
+2025-11-21 19:58:28,616 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:58:28,618 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:28,686 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:58:28,687 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:58:28,688 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:28,785 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:58:28,785 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:58:28,787 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:28,791 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_ACCESS - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:58:28,791 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:58:28,792 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 19:58:29,933 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 19:58:29,933 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 19:58:29,935 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:30,008 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 19:58:30,008 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 19:58:30,010 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:30,197 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user3@example.com
+2025-11-21 19:58:30,197 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 19:58:30,200 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 19:58:30,273 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 19:58:30,273 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 19:58:30,275 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 19:58:30,396 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 19:58:30,396 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 19:58:30,398 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 19:58:30,402 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_UPDATE - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 19:58:30,403 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=403
+2025-11-21 19:58:30,404 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 20:06:32,691 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=newuser@example.com
+2025-11-21 20:06:32,691 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:32,694 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:33,751 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=loginuser@example.com
+2025-11-21 20:06:33,751 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:33,753 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:33,829 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:33,829 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:33,831 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:34,936 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:34,936 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:34,938 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:35,011 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:35,011 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:35,013 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:35,018 - suggestion_box - INFO - API - GET /debug/my-info - user_id=1 - status=200
+2025-11-21 20:06:35,019 - httpx - INFO - HTTP Request: GET http://testserver/debug/my-info "HTTP/1.1 200 OK"
+2025-11-21 20:06:36,141 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=duplicate@example.com
+2025-11-21 20:06:36,142 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:36,144 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:36,147 - suggestion_box - WARNING - SECURITY - REGISTER_DUPLICATE_EMAIL - anonymous - email=duplicate@example.com
+2025-11-21 20:06:36,149 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 20:06:37,690 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=wrongpass@example.com
+2025-11-21 20:06:37,690 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:37,692 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:37,761 - suggestion_box - WARNING - SECURITY - LOGIN_FAILED - user_id=1 - email=wrongpass@example.com
+2025-11-21 20:06:37,763 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 401 Unauthorized"
+2025-11-21 20:06:38,794 - suggestion_box - WARNING - SECURITY - REGISTER_PASSWORD_TOO_SHORT - anonymous - email=shortpass@example.com
+2025-11-21 20:06:38,796 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 400 Bad Request"
+2025-11-21 20:06:39,082 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 20:06:39,084 - httpx - INFO - HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2025-11-21 20:06:40,057 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=security@example.com
+2025-11-21 20:06:40,057 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:40,059 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:41,074 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:41,075 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:41,076 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:41,138 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:41,138 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:41,140 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:41,256 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 20:06:41,256 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 20:06:41,258 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:41,263 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 20:06:41,264 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 20:06:41,265 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 20:06:41,417 - suggestion_box - INFO - USER_ACTION - SUGGESTION_UPDATE - user_id=1 - suggestion_id=1
+2025-11-21 20:06:41,417 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=200
+2025-11-21 20:06:41,418 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 20:06:42,295 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 20:06:42,296 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 20:06:43,678 - suggestion_box - WARNING - SECURITY - INVALID_TOKEN - anonymous - token_verification_failed
+2025-11-21 20:06:43,680 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 20:06:44,710 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 20:06:44,711 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 401 Unauthorized"
+2025-11-21 20:06:45,764 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:45,764 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:45,767 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:45,835 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:45,835 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:45,837 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:45,942 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 20:06:45,942 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 20:06:45,944 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:47,125 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:47,125 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:47,127 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:47,197 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:47,197 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:47,199 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:47,314 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 20:06:47,314 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 20:06:47,316 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:48,907 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:48,907 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:48,910 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:48,970 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:48,970 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:48,972 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:49,137 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 20:06:49,138 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 20:06:49,140 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:49,145 - suggestion_box - INFO - USER_ACTION - SUGGESTION_VIEW - user_id=1 - suggestion_id=1
+2025-11-21 20:06:49,145 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=200
+2025-11-21 20:06:49,147 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 200 OK"
+2025-11-21 20:06:50,288 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:50,288 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:50,290 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:50,360 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:50,360 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:50,362 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:50,486 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=1 - suggestion_id=1
+2025-11-21 20:06:50,487 - suggestion_box - INFO - API - POST /suggestions - user_id=1 - status=200
+2025-11-21 20:06:50,489 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:50,493 - suggestion_box - INFO - API - GET /suggestions - anonymous - status=200
+2025-11-21 20:06:50,494 - httpx - INFO - HTTP Request: GET http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:51,470 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 20:06:51,471 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 401 Unauthorized"
+2025-11-21 20:06:52,622 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:52,622 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:52,624 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:52,699 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:52,699 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:52,700 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:52,876 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user2@example.com
+2025-11-21 20:06:52,876 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 20:06:52,878 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:53,024 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 20:06:53,024 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 20:06:53,027 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:53,152 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 20:06:53,152 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 20:06:53,154 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:53,160 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_ACCESS - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 20:06:53,160 - suggestion_box - INFO - API - GET /suggestions/1 - user_id=1 - status=403
+2025-11-21 20:06:53,162 - httpx - INFO - HTTP Request: GET http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 20:06:54,636 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=1 - email=test@example.com
+2025-11-21 20:06:54,637 - suggestion_box - INFO - API - POST /auth/register - user_id=1 - status=200
+2025-11-21 20:06:54,643 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:54,953 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=1 -
+2025-11-21 20:06:54,954 - suggestion_box - INFO - API - POST /auth/login - user_id=1 - status=200
+2025-11-21 20:06:54,957 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:55,244 - suggestion_box - INFO - USER_ACTION - REGISTER_SUCCESS - user_id=2 - email=user3@example.com
+2025-11-21 20:06:55,245 - suggestion_box - INFO - API - POST /auth/register - user_id=2 - status=200
+2025-11-21 20:06:55,249 - httpx - INFO - HTTP Request: POST http://testserver/auth/register "HTTP/1.1 200 OK"
+2025-11-21 20:06:55,489 - suggestion_box - INFO - USER_ACTION - LOGIN_SUCCESS - user_id=2 -
+2025-11-21 20:06:55,490 - suggestion_box - INFO - API - POST /auth/login - user_id=2 - status=200
+2025-11-21 20:06:55,495 - httpx - INFO - HTTP Request: POST http://testserver/auth/login "HTTP/1.1 200 OK"
+2025-11-21 20:06:55,638 - suggestion_box - INFO - USER_ACTION - SUGGESTION_CREATE - user_id=2 - suggestion_id=1
+2025-11-21 20:06:55,638 - suggestion_box - INFO - API - POST /suggestions - user_id=2 - status=200
+2025-11-21 20:06:55,642 - httpx - INFO - HTTP Request: POST http://testserver/suggestions "HTTP/1.1 200 OK"
+2025-11-21 20:06:55,659 - suggestion_box - WARNING - SECURITY - UNAUTHORIZED_UPDATE - user_id=1 - attempted_suggestion_id=1, owner_id=2
+2025-11-21 20:06:55,659 - suggestion_box - INFO - API - PUT /suggestions/1 - user_id=1 - status=403
+2025-11-21 20:06:55,662 - httpx - INFO - HTTP Request: PUT http://testserver/suggestions/1 "HTTP/1.1 403 Forbidden"
+2025-11-21 20:06:58,189 - suggestion_box - WARNING - SECURITY - MISSING_TOKEN - anonymous - no_authorization_header
+2025-11-21 20:07:09,119 - suggestion_box - INFO - API - GET /health - anonymous - status=200
+2025-11-21 20:07:09,906 - suggestion_box - INFO - API - GET /health - anonymous - status=200
