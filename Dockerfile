@@ -1,20 +1,37 @@
 # Build stage
-FROM python:3.11-slim AS build
+FROM python:3.11-slim as builder
+
 WORKDIR /app
-COPY requirements.txt requirements-dev.txt ./
-RUN pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
-COPY . .
-RUN pytest -q
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
 
 # Runtime stage
 FROM python:3.11-slim
+
+# Create non-root user
+RUN adduser --disabled-password --gecos '' app
+
 WORKDIR /app
-RUN useradd -m appuser
-COPY --from=build /usr/local/lib/python3.11 /usr/local/lib/python3.11
-COPY --from=build /usr/local/bin /usr/local/bin
-COPY . .
+
+#  СОЗДАЕМ ПАПКУ LOGS и даем права
+RUN mkdir -p logs && chown -R app:app logs
+
+#  ДАЕМ ПРАВА НА ЗАПИСЬ В РАБОЧУЮ ДИРЕКТОРИЮ
+RUN chown -R app:app /app
+
+# Copy installed packages
+COPY --from=builder /root/.local /home/app/.local
+COPY --chown=app:app . .
+
+ENV PATH=/home/app/.local/bin:$PATH
+ENV PYTHONPATH=/app
+
+USER app
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
+
 EXPOSE 8000
-HEALTHCHECK CMD curl -f http://localhost:8000/health || exit 1
-USER appuser
-ENV PYTHONUNBUFFERED=1
+
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

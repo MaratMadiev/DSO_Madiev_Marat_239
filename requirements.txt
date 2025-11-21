@@ -1,2 +1,10 @@
 fastapi==0.112.2
 uvicorn==0.30.5
+sqlalchemy
+python-jose[cryptography]
+passlib[argon2]
+python-multipart
+python-dotenv
+pydantic
+pydantic[email]
+requests==2.31.0

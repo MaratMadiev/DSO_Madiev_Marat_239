@@ -27,11 +27,11 @@
 - SEC-NFR-002: Защита паролей
 - SEC-NFR-006: HTTPS/TLS
 - SEC-NFR-003: Basic owner checks
+- SEC-NFR-007: Базовое логирование
 
 ### Release 1
 - SEC-NFR-004: JWT tokens с TTL
 - SEC-NFR-003: Полная авторизация
-- SEC-NFR-007: Базовое логирование
 
 ### Release 2
 - SEC-NFR-005: Rate limiting
