@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  suggestion-box:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./suggestion_box.db
+      - SECRET_KEY=docker-secret-key-123
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
