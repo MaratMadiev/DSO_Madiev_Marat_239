@@ -2,7 +2,10 @@ name: CI Pipeline
 
 on:
   push:
+    branches:
+      - 'p[0-9][0-9]-*'
   pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
