@@ -2,7 +2,8 @@ name: SBOM & SCA Scanning
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - 'p[0-9][0-9]-*'
     paths:
       - '**/*.py'
       - '**/requirements*.txt'
