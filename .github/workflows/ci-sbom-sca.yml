@@ -1,0 +1,89 @@
+name: SBOM & SCA Scanning
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**/*.py'
+      - '**/requirements*.txt'
+      - '**/pyproject.toml'
+      - '**/setup.py'
+      - '.github/workflows/ci-sbom-sca.yml'
+  workflow_dispatch:  # Ручной запуск
+
+permissions:
+  contents: read
+
+jobs:
+  sbom-sca:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+
+    - name: Generate SBOM with Syft
+      run: |
+        # Установка Syft
+        curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+
+        # Генерация SBOM
+        mkdir -p EVIDENCE/P09
+        syft . -o cyclonedx-json > EVIDENCE/P09/sbom.json
+
+    - name: SCA Scanning with Grype
+      run: |
+        # Установка Grype
+        curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+
+        # Сканирование уязвимостей на основе SBOM
+        grype sbom:EVIDENCE/P09/sbom.json -o json > EVIDENCE/P09/sca_report.json
+
+    - name: Generate SCA Summary
+      run: |
+        # Создание сводки по уязвимостям
+        echo "# SCA Scan Summary" > EVIDENCE/P09/sca_summary.md
+        echo "" >> EVIDENCE/P09/sca_summary.md
+        echo "**Date:** $(date)" >> EVIDENCE/P09/sca_summary.md
+        echo "" >> EVIDENCE/P09/sca_summary.md
+
+        # Анализируем JSON отчет для создания сводки
+        if [ -f EVIDENCE/P09/sca_report.json ]; then
+          echo "## Vulnerability Summary" >> EVIDENCE/P09/sca_summary.md
+          echo "" >> EVIDENCE/P09/sca_summary.md
+          echo "| Severity | Count |" >> EVIDENCE/P09/sca_summary.md
+          echo "|----------|-------|" >> EVIDENCE/P09/sca_summary.md
+
+          # Подсчет уязвимостей по уровню серьезности
+          cat EVIDENCE/P09/sca_report.json | jq -r '.matches[] | .vulnerability.severity' | sort | uniq -c | while read count severity; do
+            echo "| $severity | $count |" >> EVIDENCE/P09/sca_summary.md
+          done
+        else
+          echo "No SCA report found." >> EVIDENCE/P09/sca_summary.md
+        fi
+
+        echo "" >> EVIDENCE/P09/sca_summary.md
+        echo "## Files Generated" >> EVIDENCE/P09/sca_summary.md
+        echo "" >> EVIDENCE/P09/sca_summary.md
+        echo "- **SBOM:** EVIDENCE/P09/sbom.json" >> EVIDENCE/P09/sca_summary.md
+        echo "- **SCA Report:** EVIDENCE/P09/sca_report.json" >> EVIDENCE/P09/sca_summary.md
+        echo "- **Summary:** This file (sca_summary.md)" >> EVIDENCE/P09/sca_summary.md
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: sbom-sca-evidence
+        path: EVIDENCE/P09/
+        retention-days: 30
