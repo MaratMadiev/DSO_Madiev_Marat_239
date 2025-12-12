@@ -1,0 +1,146 @@
+rules:
+  # 1. ПОИСК ХАРДКОДНЫХ СЕКРЕТОВ - ИСПРАВЛЕННЫЙ
+  - id: hardcoded-secrets
+    pattern-regex: |
+      (?i)(?:\b|_)(?:
+        password|passwd|pwd|
+        secret|
+        api[_-]?key|
+        token|
+        credential|
+        access[_-]?key|
+        secret[_-]?key|
+        private[_-]?key|
+        session[_-]?id|
+        auth[_-]?token|
+        bearer[_-]?token|
+        jwt|
+        oauth[_-]?token|
+        client[_-]?(?:id|secret)|
+        aws[_-]?(?:access|secret)
+      )(?:\b|_)
+      \s*=\s*
+      ['"]
+      [^'"\n]{4,}
+      ['"]
+    message: "Обнаружен хардкод учетных данных. Используйте переменные окружения или secure vault."
+    languages: [python, javascript, typescript, java, go]
+    severity: ERROR
+    metadata:
+      category: "security"
+      cwe: "CWE-798: Use of Hard-coded Credentials"
+      confidence: HIGH
+
+  # 2. ОТЛАДОЧНЫЕ ОПЕРАТОРЫ В PRODUCTION КОДЕ
+  - id: debug-statements
+    patterns:
+      - pattern-either:
+        - pattern: console.log(...)
+        - pattern: print(...)
+        - pattern: alert(...)
+        - pattern: debugger
+        - pattern: System.out.println(...)
+        - pattern: fmt.Println(...)
+        - pattern: fmt.Printf(...)
+    message: "Отладочный оператор в production коде. Удалите перед коммитом."
+    languages: [python, javascript, typescript, java, go]
+    severity: INFO
+    metadata:
+      category: "best-practice"
+      confidence: HIGH
+
+  # 3. SQL-ИНЪЕКЦИИ (базовый паттерн)
+  - id: sql-injection-simple
+    pattern-regex: |
+      (?i)\b(?:select|insert|update|delete|union|drop|create)\b
+      .*
+      (?:'[^']*'|[0-9]+|\$[A-Za-z_][A-Za-z0-9_]*)
+      .*
+      (?:\+\s*['"]|\$\{|\${[^}]+})
+    message: "Потенциальная SQL-инъекция. Используйте параметризованные запросы или ORM."
+    languages: [python, javascript, typescript, java]
+    severity: ERROR
+    metadata:
+      category: "security"
+      cwe: "CWE-89: SQL Injection"
+      confidence: MEDIUM
+
+  # 4. XSS ЧЕРЕЗ innerHTML
+  - id: xss-innerhtml
+    patterns:
+      - pattern: |
+          $ELEMENT.innerHTML = $USER_INPUT
+      - pattern: |
+          $ELEMENT.outerHTML = $USER_INPUT
+      - pattern: |
+          document.write($USER_INPUT)
+    message: "Потенциальная XSS-уязвимость. Используйте textContent или санитайзинг библиотеки."
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: "security"
+      cwe: "CWE-79: Cross-site Scripting"
+      confidence: HIGH
+
+  # 5. КОНФИДЕНЦИАЛЬНАЯ ИНФОРМАЦИЯ В ЛОГАХ
+  - id: sensitive-data-logging
+    pattern-regex: |
+      (?i)(?:console\.log|print|logger\.(?:info|debug|warn|error))
+      .*
+      (?:
+        password|passwd|pwd|
+        secret|key|token|
+        credit.?card|cc.?num|
+        ssn|social.?security|
+        api.?key|access.?key|
+        bearer.?token|jwt
+      )
+    message: "Конфиденциальная информация в логах. Маскируйте данные перед логированием."
+    languages: [python, javascript, typescript, java]
+    severity: WARNING
+    metadata:
+      category: "security"
+      cwe: "CWE-532: Insertion of Sensitive Information into Log File"
+      confidence: HIGH
+
+  # 6. НЕБЕЗОПАСНЫЕ РАЗРЕШЕНИЯ ФАЙЛОВ
+  - id: insecure-file-permissions
+    patterns:
+      - pattern: |
+          os.chmod(..., 0o777)
+      - pattern: |
+          os.chmod(..., 0o666)
+      - pattern: |
+          chmod("777", ...)
+      - pattern: |
+          chmod("666", ...)
+    message: "Небезопасные разрешения файлов. Используйте минимально необходимые права."
+    languages: [python, bash]
+    severity: WARNING
+    metadata:
+      category: "security"
+      cwe: "CWE-732: Incorrect Permission Assignment for Critical Resource"
+      confidence: HIGH
+
+  # 7. СЛАБЫЕ КРИПТОГРАФИЧЕСКИЕ АЛГОРИТМЫ
+  - id: weak-crypto-algorithms
+    patterns:
+      - pattern: |
+          hashlib.md5(...)
+      - pattern: |
+          hashlib.sha1(...)
+      - pattern: |
+          CryptoJS.MD5(...)
+      - pattern: |
+          CryptoJS.SHA1(...)
+      - pattern: |
+          java.security.MessageDigest.getInstance("MD5")
+      - pattern: |
+          java.security.MessageDigest.getInstance("SHA-1")
+    message: "Использование слабой хэш-функции. Используйте SHA-256, SHA-512 или bcrypt (для паролей)."
+    languages: [python, javascript, typescript, java]
+    severity: WARNING
+    metadata:
+      category: "security"
+      cwe: "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+      confidence: HIGH
