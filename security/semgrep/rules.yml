@@ -2,14 +2,52 @@ rules:
   - id: hardcoded-secret
     patterns:
       - pattern-regex: "(password|secret|token|key)[\\s]*=[\\s]*['\"][^'\"\\s]{8,}['\"]"
-    message: Hardcoded secret detected
-    languages: [python, javascript, typescript, java, go]
+    message: Hardcoded secret detected. Use environment variables or secret management.
+    languages: [python]
     severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-798: Use of Hard-coded Credentials"
 
-  - id: debug-enabled
+  - id: debug-enabled-production
     patterns:
       - pattern: debug = True
       - pattern: DEBUG = true
-    message: Debug mode enabled in production code
+    message: Debug mode should be disabled in production code
     languages: [python]
     severity: WARNING
+    metadata:
+      category: security
+
+  - id: insecure-random
+    patterns:
+      - pattern: random.random()
+      - pattern: Math.random()
+    message: Use cryptographically secure random number generators for security purposes
+    languages: [python]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+
+  - id: sql-injection-risk
+    patterns:
+      - pattern-regex: "execute\\(.*\\+.*\\)"
+      - pattern-regex: "query\\(.*\\+.*\\)"
+    message: Possible SQL injection risk with string concatenation
+    languages: [python]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-89: SQL Injection"
+
+  - id: shell-command-injection
+    patterns:
+      - pattern-regex: "os\\.system\\(.*\\+.*\\)"
+      - pattern-regex: "subprocess\\.run\\(.*\\+.*\\)"
+    message: Possible shell command injection with string concatenation
+    languages: [python]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-78: OS Command Injection"
